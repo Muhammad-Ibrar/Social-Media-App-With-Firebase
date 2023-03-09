@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1005212779702",
+    "project_id": "social-media-app-22138",
+    "storage_bucket": "social-media-app-22138.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005212779702:android:27591f54dfad928cd5d217",
+        "android_client_info": {
+          "package_name": "com.afridi.social_media"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005212779702-lgvr7brvq1l3dm5ihihata74v7dvallo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPTFL97zGEoVGqLo0PG8pLKrNxm-xLMU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005212779702-lgvr7brvq1l3dm5ihihata74v7dvallo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
