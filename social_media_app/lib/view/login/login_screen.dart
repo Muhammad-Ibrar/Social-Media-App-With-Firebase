@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tech_media/res/components/round_button.dart';
 import 'package:tech_media/res/components/input_text_field.dart';
+import 'package:tech_media/utils/routes/route_name.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -78,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                               keyBoardType: TextInputType.text,
                               hint: 'password',
-                              obscureText: false
+                              obscureText: true
                           ),
                         ],
                       ),
@@ -106,14 +107,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPress: () { },
                 ),
                 SizedBox(height: height*.02),
-                Text.rich(
-                  TextSpan(
-                    text: 'Do not have an account?',
-                    children: [
-                      TextSpan(
-                        text: 'SignUp' , style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 15),
-                      )
-                    ]
+                InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, RouteName.signupScreen);
+                  },
+                  child: Text.rich(
+                    TextSpan(
+                      text: 'Do not have an account?',
+                      children: [
+                        TextSpan(
+                          text: 'SignUp' , style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 15),
+                        )
+                      ]
+                    ),
                   ),
                 )
               ],
