@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tech_media/res/components/round_button.dart';
 import 'package:tech_media/res/components/input_text_field.dart';
 import 'package:tech_media/utils/routes/route_name.dart';
+import 'package:tech_media/view_model/login/login_controller.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -100,11 +102,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 40,
                 ),
-
-                RoundButton(
-                  title: 'Login',
-                  loading: false,
-                  onPress: () { },
+                ChangeNotifierProvider(
+                  create: (_) => LoginController(),
+                  child: Consumer<LoginController>(
+                    builder: (context , provider , child){
+                      return  RoundButton(
+                        title: 'Login',
+                        loading: provider.loading,
+                        onPress: () {
+                          if(_formKey.currentState!.validate()){
+                            provider.login(context, emailController.text, passwordController.text);
+                          }
+                        },
+                      );
+                    }
+                  ),
                 ),
                 SizedBox(height: height*.02),
                 InkWell(
