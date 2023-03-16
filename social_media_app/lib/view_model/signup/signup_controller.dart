@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:tech_media/utils/routes/route_name.dart';
 import 'package:tech_media/utils/utils.dart';
+import 'package:tech_media/view_model/services/session_manager.dart';
 
 class SignUpController with ChangeNotifier{
 
@@ -26,6 +27,7 @@ class SignUpController with ChangeNotifier{
           email: email,
           password: password
       ).then((value){
+        SessionController().userId = value.user!.uid.toString();
         ref.child(value.user!.uid.toString()).set({
 
           'uid' : value.user!.uid.toString(),

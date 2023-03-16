@@ -4,7 +4,7 @@ import 'package:tech_media/utils/routes/route_name.dart';
 import 'package:tech_media/utils/utils.dart';
 import 'package:tech_media/view_model/services/session_manager.dart';
 
-class LoginController with ChangeNotifier{
+class ForgotPasswordController with ChangeNotifier{
 
   FirebaseAuth auth = FirebaseAuth.instance;
   bool _loading  = false;
@@ -16,20 +16,19 @@ class LoginController with ChangeNotifier{
     notifyListeners();
   }
 
-  void login(BuildContext context , String email , String password) {
+  void forgotPassword(BuildContext context , String email) {
 
     setLoading(true);
 
     try {
-      auth.signInWithEmailAndPassword(
+      auth.sendPasswordResetEmail(
           email: email,
-          password: password
+
       ).then((value){
 
-        SessionController().userId = value.user!.uid.toString();
         setLoading(false);
-        Navigator.pushNamed(context, RouteName.dashboardScreen);
-
+        Navigator.pushNamed(context, RouteName.loginView);
+        Utils.toastMessage('Please Check Your Email');
 
       }).onError((error, stackTrace) {
         setLoading(false);
