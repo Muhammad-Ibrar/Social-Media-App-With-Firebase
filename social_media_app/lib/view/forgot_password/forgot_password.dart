@@ -32,10 +32,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery
-        .of(context)
-        .size
-        .height * 1;
+    final height = MediaQuery.of(context).size.height * 1;
     return Scaffold(
       body: SafeArea(
 

@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, RouteName.forgotScreen);
                       },
                       child: Text(
-                          'Forgot Password',
+                          'Forgot Password?',
                         style: Theme.of(context).textTheme.headline2!.copyWith(
                           fontSize: 15,
                           decoration: TextDecoration.underline
