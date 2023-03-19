@@ -20,10 +20,11 @@ class AppColors {
   static const Color textFieldDefaultFocus =  Color(0xfff5f5f6);
   static const Color textFieldDefaultBorderColor  =  Color(0xfffDFDFE1);
   static const Color textFieldFocusBorderColor =  Color.fromRGBO(19, 103, 33 , 1);
-
+  static const Color PrimaryButtonColor =  Color(0xff242424);
 
   static const Color alertColor =  Color(0xffff0222);
   static const Color whiteColor =  Color(0xffffffff);
+
 
   static const Color focusUnderLineColor =  Color(0xff373737);
   static const Color dividedColor =  Color(0xff373737);
