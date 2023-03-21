@@ -111,7 +111,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ],
                             ),
                             const SizedBox(height: 40),
-                            ReusableRow(title: 'UserName', value: map['userName'], iconData: Icons.person),
+                            GestureDetector(
+                              onTap: (){
+                                provider.showUserNameDialog(context, map['userName']);
+                              },
+                                child: ReusableRow(title: 'UserName', value: map['userName'], iconData: Icons.person)
+
+                            ),
                             ReusableRow(title: 'Phone', value: map['phone'] == '' ? '123-456-7890' : map['phone'] , iconData: Icons.phone),
                             ReusableRow(title: 'Email', value: map['email'], iconData: Icons.email_outlined),
 

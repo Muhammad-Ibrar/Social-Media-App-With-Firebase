@@ -109,4 +109,35 @@ class ProfileController with ChangeNotifier {
        Utils.toastMessage(error.toString());
      });
   }
+
+  Future<void> showUserNameDialog(BuildContext context , String name) {
+
+    return showDialog(
+        context: context,
+        builder: (context){
+          return AlertDialog(
+            title: Text('Update User Name'),
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(onPressed: (){
+                Navigator.pop(context);
+              },
+                  child: Text('Ok')
+              ),
+              TextButton(onPressed: (){
+                Navigator.pop(context);
+              },
+                  child: Text('Ok')
+              ),
+            ],
+          );
+        }
+    );
+  }
 }
