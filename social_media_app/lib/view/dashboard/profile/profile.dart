@@ -23,7 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      resizeToAvoidBottomInset: false,
       body:ChangeNotifierProvider(
         create: (_) => ProfileController(),
         child: Consumer<ProfileController>(
@@ -118,7 +118,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 child: ReusableRow(title: 'UserName', value: map['userName'], iconData: Icons.person)
 
                             ),
-                            ReusableRow(title: 'Phone', value: map['phone'] == '' ? '123-456-7890' : map['phone'] , iconData: Icons.phone),
+                            GestureDetector(
+                              onTap: (){
+                                provider.showPhoneNumberDialog(context, map['phone']);
+                              },
+                                child: ReusableRow(title: 'Phone', value: map['phone'] == '' ? '123-456-7890' : map['phone'] , iconData: Icons.phone)),
                             ReusableRow(title: 'Email', value: map['email'], iconData: Icons.email_outlined),
 
                           ],
