@@ -4,6 +4,7 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:tech_media/res/color.dart';
 import 'package:tech_media/utils/routes/route_name.dart';
 import 'package:tech_media/view/dashboard/profile/profile.dart';
+import 'package:tech_media/view/dashboard/user/user_list.dart';
 import 'package:tech_media/view_model/services/session_manager.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -22,7 +23,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     return [
       SafeArea(
-        child: Text('Home' , style: Theme.of(context).textTheme.subtitle1,)
+        child: Center(
+            child: Text('Home' , style: Theme.of(context).textTheme.subtitle1,)
+        )
     ),
       SafeArea(
           child: Text('Chat', style: Theme.of(context).textTheme.subtitle1,)
@@ -30,9 +33,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       SafeArea(
           child: Text('Add', style: Theme.of(context).textTheme.subtitle1,)
       ),
-      SafeArea(
-          child: Text('Message', style: Theme.of(context).textTheme.subtitle1,)
-      ),
+      UserListScreen(),
      ProfileScreen()
 
     ];
@@ -53,8 +54,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
           inactiveIcon: Icon(Icons.add , color: Colors.grey.shade100,)
       ),
       PersistentBottomNavBarItem(
-        icon:const Icon(Icons.message_outlined),
-          inactiveIcon: Icon(Icons.message_outlined , color: Colors.grey.shade100,)
+        icon:const Icon(Icons.supervised_user_circle_sharp),
+          inactiveIcon: Icon(Icons.supervised_user_circle_sharp , color: Colors.grey.shade100,)
       ),
       PersistentBottomNavBarItem(
         icon:const Icon(Icons.person),
