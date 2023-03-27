@@ -41,8 +41,8 @@ class ProfileController with ChangeNotifier {
 
     if(pickedFile != null){
       _image = XFile(pickedFile.path);
-      uploadImage(context);
       notifyListeners();
+      uploadImage(context);
     }
 
   }
@@ -53,8 +53,9 @@ class ProfileController with ChangeNotifier {
 
     if(pickedFile != null){
       _image = XFile(pickedFile.path);
-      notifyListeners();
       uploadImage(context);
+      notifyListeners();
+
     }
 
   }
@@ -93,7 +94,7 @@ class ProfileController with ChangeNotifier {
     );
   }
 
-  void uploadImage(BuildContext context)async{
+  void uploadImage(BuildContext context)async {
     setLoading(true);
 
      firebase_storage.Reference storageRef = firebase_storage.FirebaseStorage.instance.ref('/profileImage'+SessionController().userId.toString()) ;
@@ -105,7 +106,7 @@ class ProfileController with ChangeNotifier {
      
      ref.child(SessionController().userId.toString()).update({
 
-       'Profile' : newUrl.toString()
+       'profile image' : newUrl.toString()
      }).then((value){
        Utils.toastMessage('Profile Updated');
        setLoading(false);

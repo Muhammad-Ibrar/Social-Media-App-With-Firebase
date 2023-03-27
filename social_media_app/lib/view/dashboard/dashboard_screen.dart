@@ -28,7 +28,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         )
     ),
       SafeArea(
-          child: Text('Chat', style: Theme.of(context).textTheme.subtitle1,)
+          child: Center(child: Text('Chat', style: Theme.of(context).textTheme.subtitle1,))
       ),
       SafeArea(
           child: Text('Add', style: Theme.of(context).textTheme.subtitle1,)

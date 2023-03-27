@@ -63,11 +63,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(100),
 
-                                        child: provider.image == null ? map['profile'].toString() == " " ? Icon(Icons.person_outline) :Image(
+                                        child:provider.image == null ? map['profile'].toString() == " " ? Icon(Icons.person_outline) :
+                                        Image(
                                           fit: BoxFit.cover,
-                                          image:const NetworkImage(
-                                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_0YktZumnDWz05vaoM9zkHdSjYj21A7_38A&usqp=CAU'
-                                          ) ,
+                                          image:NetworkImage('https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1503023345310-bd7c1de61c7d%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8%26w%3D1000%26q%3D80&tbnid=Y8NKKCmLLDotWM&vet=12ahUKEwjuxKvrn_v9AhX-pycCHRmRDH8QMygBegUIARDhAQ..i&imgrefurl=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhuman&docid=ZaycYywhXLmIVM&w=1000&h=1250&q=images&ved=2ahUKEwjuxKvrn_v9AhX-pycCHRmRDH8QMygBegUIARDhAQ') ,
 
                                           loadingBuilder: (context , child , loadingProgress){
                                             if(loadingProgress == null){
@@ -83,17 +82,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             );
                                           },
                                         ):
+                                        Image.file(
+                                          File(provider.image!.path).absolute
+                                        )
 
-                                            Stack(
-                                              children: [
-                                                Image.file(
-                                                    File(provider.image!.path).absolute
-                                                ),
-                                                const Center(
-                                                  child: CircularProgressIndicator(),
-                                                )
-                                              ],
-                                            )
+
                                       ),
                                     ),
                                   ),
